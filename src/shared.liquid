@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
 
 {% assign launch_data = results %}
-{% if results != "" %}
+{% if results and results.size > 0 %}
 {% assign launch = results | sample %}
 {% assign has_launch = true %}
 
