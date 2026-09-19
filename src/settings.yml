@@ -1,0 +1,60 @@
+---
+strategy: polling
+no_screen_padding: 'yes'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+framework_version: latest
+serverless_language: ''
+polling_url: https://trmnl.achtnegen.nl/launchpad/launch/upcoming?limit={{ amount }}
+polling_headers: ''
+polling_body: ''
+id: 189917
+oauth_enabled: 'false'
+oauth_pkce_enabled: 'no'
+oauth_authorize_url: ''
+oauth_token_url: ''
+oauth_scopes: ''
+oauth_scope_separator: ''
+oauth_refresh_url: ''
+oauth_auth_params: ''
+oauth_token_headers: ''
+oauth_token_site: ''
+oauth_token_params: ''
+oauth_token_request_auth_method: ''
+oauth_body_format: ''
+oauth_token_response_metadata: ''
+oauth_authorization_method: ''
+oauth_refresh_params: ''
+oauth_token_field_name: ''
+oauth_expiry_field_name: ''
+oauth_expiry_strategy: ''
+oauth_fixed_expiry_ms: ''
+custom_fields:
+- name: About this plugin
+  keyname: author_bio
+  field_type: author_bio
+  description: Show the one or up to 10 upcoming launches at random order. Show basic information about the flight, what the mission is and when it takes place (UTC Time).<br><br> The information provides is from <a href="thespacedevs.com">thespacedevs.com</a>, an open API. There are limitations for use. Thats why the info is pulled and cached at my end and refreshed every 15 minutes.
+  help_text: April 2026 - Update to a new layout that is easier to maintain and nicer for the eyes.
+  category: education,discovery
+  email_address: trmnl@achtnegen.nl
+  github_url: https://github.com/Bastronautik/trmnl-launchpad
+- keyname: amount
+  field_type: select
+  options:
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - '6'
+  - '7'
+  - '8'
+  - '9'
+  - '10'
+  name: Amount of launches, randomized
+  description: Select the amount of you would like to randomize.
+  help_text: Select 1 if you always want the latest
+name: Launchpad
+description: Upcoming Rocket Launches
+refresh_interval: 1440

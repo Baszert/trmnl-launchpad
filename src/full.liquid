@@ -1,0 +1,38 @@
+{% if has_launch %}
+<div class="layout layout--col layout--lef gap--large" id="launchpadApp">
+
+  <div class="flex w--full p--5 pb--0">
+    <div class="flex flex--center-y stretch">
+
+      <div class="value--xxsmall flex flex--center"><i class="hgi hgi-stroke hgi-calendar-01 value--small"></i>  {{ launch_date }} &mdash; {{ launch_time_display }}</div>
+
+    </div>
+    <div class="bg--gray-75 p--2 md:pt--1 px--5 rounded--full text-stroke label">
+      {{ launch_status }}
+    </div>
+    <div class="bg--black p--2 md:pt--1 px--3 rounded--full label">
+      <span class="text--white">{{ countdown_label }}</span>
+    </div>
+  </div>
+
+  <div class="grid grid--cols-3 lg:grid--cols-2 stretch px--5">
+    <div class="col--span-2 lg:col--span-1 flex flex--col flex--left flex--top h--full">
+      <div data-value-fit="true" class="title title--large bold">{{ launch_name }} </div>
+      <div class="label">By {{ provider_name}}</div>
+      <div class="label--small lg:label text--gray-30 body-text">
+        {{ mission_description | truncate: 200 }}
+      </div>
+    </div>
+    <div class="custom-image">
+      <img class="image rounded w--full h--full image--cover image-dither" src="{{ launch_image }}">
+    </div>
+  </div>
+
+  <div class="grid grid--cols-2 gap--large bg--gray-75 p--5">
+    {% render "dataPoint", title: "Rocket", value: rocket_name, icon: "hgi-rocket-01" %}
+    {% render "dataPoint", title: "Launchpad", value: pad_name, icon: "hgi-rocket-02" %}
+    {% render "dataPoint", title: "Destination", value: mission_orbit, icon: "hgi-saturn-02" %}
+    {% render "dataPoint", title: "Location", value: location_name, icon: "hgi-pin-location-03" %}
+  </div>
+</div>
+{% endif %}
